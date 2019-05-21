@@ -39,6 +39,6 @@ Probabilistic programming
 And, or, <, , etc.
 Repl
 Display
+Define syntactic sugar (define x y (foo))
 """
-
 

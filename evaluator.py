@@ -113,6 +113,7 @@ def evaluate(expressions, env=None):
 
 def run(code):
     expressions = parser.parse(tokenizer.tokenize(code))
+    print(expressions)
     env = None
     for expression in expressions[:-1]:
         env = evaluate(expression, env)[1]
@@ -121,7 +122,8 @@ def run(code):
 
 # sq_test = '(((square ((x) (x x *) lambda))) (3 square) let)'
 # double_test = '(((double ((x) (x x +) lambda))) (3 double) let)'
-if_test = '((3 3 eq?) 1 0 if)'
-ran, envir = run(if_test)
-print('run_test_result:', ran, envir.bindings)
+# if_test = '((3 3 eq?) 1 0 if)'
+with open('test.txt', 'r') as testfile:
+    test = testfile.read()
+    print('run_test_result:', run(test))
 
