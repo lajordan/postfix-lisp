@@ -1,6 +1,5 @@
-arr = ['(', 'foo', '(', 'bar', 'y', '(', 'yeet', 'z', ')', ')', 'x', 'w', ')']
-arr2 = ['(', 'foo', '(', 'bar', 'y', ')', 'x', ')', '(', 'yeet', 'w', ')']
-
+# arr = ['(', 'foo', '(', 'bar', 'y', '(', 'yeet', 'z', ')', ')', 'x', 'w', ')']
+# arr2 = ['(', 'foo', '(', 'bar', 'y', ')', 'x', ')', '(', 'yeet', 'w', ')']
 
 def parse_inner(tokens, index=0, sofar=[]):
     if index < len(tokens):
@@ -26,23 +25,13 @@ print(parse(arr))
 
 """
 TODO:
-Implement lambda
-Implement is_number
-Implement is_string
-Make list of builtin operations
-Initialize global environment with builtins
-Implement operator class?
-Turn apply into whatever it should be
-Set up all the imports
-Implement eq? builtin
-Implement actual Lisp quoting (probably in parser, or even tokenizer)
-Implement cons builtin
-Implement car builtin
-Implement cdr builtin
-Implement atom? builtin
+Implement real Lisp quoting and backquoting/escaping
 Implement cond special form
-Implement list builtin
-Change list implementation to linked list
-Make it all postfix
+Implement map, filter, reduce
+Debug/test
+Implement amb
+Implement some other kind of concurrency/parallelization
+Probabilistic programming
+And, or, <, , etc.
 """
 

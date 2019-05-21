@@ -1,41 +1,16 @@
-class Symbol():
-    def __init__(self):
-        pass # Check whether this is legit
-
-
-class Var(symbol):
-    def __init__(self, name):
-        super(self, name).__init__()
-
-    def eval(self, env):
-        return env.lookup(self.name)
-
-
-class Num(symbol):
-    def __init__(self, name):
-        self.value = float(self.name)
-
-    def eval(self, env=None):
-        return self.value
-
-
-class String(symbol):
-    def __init__(self.value):
-        self.value = value
-
-    def eval(self, env=None):
-        return self
-
-
-class Proc(symbol):
-    def __init__(self, params, body):
-        self.name = name
+class Proc():
+    def __init__(self, params, body, env):
         self.params = params
         self.body = body
+        self.env = env
 
-    def eval(self):
-        # look up how to do it in Python - might need a Python eval if ugly
-        return (lambda params: body)
+    def __call__(self, args):
+        new_env = Env(parent=self.env)
+        if len(args) != len(params):
+            raise ValueError('Wrong number of arguments')
+        for i in range(len(params)):
+            new_env.define_in_env(params[i], args[i])
+        # apply body
 
 
 class Env():
