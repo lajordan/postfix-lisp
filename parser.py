@@ -1,5 +1,9 @@
+from tokenizer import tokenize
+
 # arr = ['(', 'foo', '(', 'bar', 'y', '(', 'yeet', 'z', ')', ')', 'x', 'w', ')']
 # arr2 = ['(', 'foo', '(', 'bar', 'y', ')', 'x', ')', '(', 'yeet', 'w', ')']
+
+test = '(define square\n(lambda (x) (* x x)))'
 
 def parse_inner(tokens, index=0, sofar=[]):
     if index < len(tokens):
@@ -21,7 +25,7 @@ def parse(tokens):
     parsed_inner = parse_inner(tokens)
     return parsed_inner[0]
 
-print(parse(arr))
+# print(parse(tokenize(test)))
 
 """
 TODO:
@@ -33,5 +37,8 @@ Implement amb
 Implement some other kind of concurrency/parallelization
 Probabilistic programming
 And, or, <, , etc.
+Repl
+Display
 """
+
 
